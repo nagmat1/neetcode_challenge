@@ -7,7 +7,8 @@ class Solution:
         elif len(strs)==1 : 
             return strs[0]
         for i in range(len(strs[0])): 
-            if strs[0][i]!=strs[-1][i]:
-                return pref
+            for word in strs: 
+                if i == len(word) or word[i]!=strs[0][i]: 
+                    return pref 
             pref = pref+strs[0][i]
         return pref
